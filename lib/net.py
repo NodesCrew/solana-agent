@@ -12,7 +12,7 @@ class NetInfo(object):
         self.read_adapters()
 
     def read_adapters(self):
-        data = subprocess.check_output(["lspci"])
+        data = subprocess.check_output(["lspci"]).decode()
 
         for line in data.split("\n"):
             line = line.strip()

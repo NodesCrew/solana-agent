@@ -15,9 +15,9 @@ class SolanaInfo(object):
 
     def read_address(self):
         """ Read solana address (identity) """
-        data = subprocess.check_output(["solana", "address"])
+        data = subprocess.check_output(["solana", "address"]).decode()
         self.address = data.strip()
 
     def read_version(self):
-        data = subprocess.check_output(["solana", "--version"])
+        data = subprocess.check_output(["solana", "--version"]).decode()
         self.version = data.strip()

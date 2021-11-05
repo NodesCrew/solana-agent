@@ -13,7 +13,7 @@ SYSCTL_PARAMS_MAP = {
 
 
 def iter_sysctl_params():
-    data = subprocess.check_output(["sysctl", "-a"])
+    data = subprocess.check_output(["sysctl", "-a"]).decode()
     for line in data.split("\n"):
         if line.strip():
             param, value = line.split("=")
